@@ -1,0 +1,15 @@
+@startuml
+participant "user"
+participant elcampus
+participant teacher
+
+activate "user"
+"user" --> elcampus: 課題の提出
+activate elcampus
+elcampus --> teacher: 各生徒の課題を送信
+activate teacher
+teacher --> elcampus: 合否判定の確認
+deactivate teacher
+elcampus --> "user": 提出完了の返答
+deactivate elcampus
+@enduml
